@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<title>Detail</title>
+</head>
+<body>
+
+
+	<center>
+		<h2>Página Detail</h2>
+
+
+		<a class="btn btn-primary" href="/cliente">Clientes</a> <a
+			class="btn btn-primary" href="/">Menú</a>
+
+	</center>
+	<hr />
+	<table class="table table-striped ">
+
+		<tr>
+			<td><label>ID: </label></td>
+			<td><output th:text="${cliente.id}" /></td>
+
+		</tr>
+		<tr>
+			<td><label>Nome: </label></td>
+			<td><output th:text="${cliente.nome}" /></td>
+
+		</tr>
+		<tr>
+			<td><label>CPF: </label></td>
+			<td><output th:text="${cliente.cpf}" /></td>
+
+		</tr>
+		<tr>
+
+
+		</tr>
+		
+		
+	</table>
+</body>
+</html>

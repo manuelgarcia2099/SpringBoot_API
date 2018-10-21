@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<title>Clientes</title>
+</head>
+<body>
+
+	<center>
+		<h2>Lista de Clientes</h2>
+
+
+		<a class="btn btn-primary" href="/cliente/cadastro">Cadastro</a> 
+		<a class="btn btn-primary" href="/">Menú</a>
+
+	</center>
+
+	<hr />
+	<br>
+	
+<!-- <span th:text=" ${clientes}"></span> -->
+	<table class="table table-dark">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>CPF</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- 			th es de themeleaf Igual al foreach de Java -->
+			<tr th:each="cliente : ${clientes}">
+				<td th:text="${cliente.id}"></td>
+				<td th:text="${cliente.nome}"></td>
+				<td th:text="${cliente.cpf}"></td>
+				
+				<td><a class="btn btn-info" th:href="@{/cliente/{id}(id=${cliente.id})}">Exibir</a></td>
+				
+				<td><a class="btn btn-success" th:href="@{/cliente/{id}/editar(id=${cliente.id})}">Editar</a> </td>
+				
+				<td><a class="delete btn btn-danger" th:href="@{/cliente/{id}/excluir(id=${cliente.id})}">Excluir</a> </td>
+			</tr>
+			
+		</tbody>
+
+	</table>
+
+</body>
+</html>
